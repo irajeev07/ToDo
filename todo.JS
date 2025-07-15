@@ -1,12 +1,13 @@
-let btn = document.querySelector("button");
+let addButton = document.getElementById('addBtn');
 let ul = document.querySelector("ul");
 let inp = document.querySelector("input");
 
-btn.addEventListener("click", function () {
+addButton.addEventListener("click", function () {
     let item = document.createElement("li");
     item.innerText = inp.value;
 
-    let delBtn = document.querySelector("button");
+    // let delBtn = document.querySelector("button");
+    const delBtn = document.createElement('button');
     delBtn.innerText = "delete";
     delBtn.classList.add("delete");
     item.appendChild(delBtn);
@@ -17,6 +18,7 @@ btn.addEventListener("click", function () {
 
 
 ul.addEventListener("click", function(event) {
+    console.log('delete', )
     if(event.target.nodeName == "BUTTON") {
         let listItem = event.target.parentElement;
         listItem.remove();
